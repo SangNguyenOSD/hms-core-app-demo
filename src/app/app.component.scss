@@ -1,0 +1,28 @@
+.app {
+  height: 100vh;
+
+  &__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  &__layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__layout-header {
+    height: 95px;
+  }
+
+  &__layout-content {
+    display: flex;
+    min-height: calc(100vh - 95px - 55px);
+  }
+
+  &__layout-footer {
+    height: 55px;
+  }
+}
