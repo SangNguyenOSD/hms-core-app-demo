@@ -1,19 +1,14 @@
 <div class="app">
   <div class="app__login" *ngIf="!isLoginSuccess">
-    <hms-login (signIn)="onSignIn($event)"></hms-login>
-    <h4>{{loginErrorMessage}}</h4>
+    <hms-login [loginSignal]="loginSignal" (signIn)="onSignIn($event)"></hms-login>
   </div>
   <div class="app__layout" *ngIf="isLoginSuccess">
-    <div class="app__layout-header">
-      <hms-header [headerData]="headerData" (searchTerm)="onSearch($event)" (updateProfile)="onUpdateProfile()"
-                  (changePassword)="onChangePassword()" (signOut)="onSignOut()"></hms-header>
-    </div>
+    <hms-header [headerData]="headerData" (searchTerm)="onSearch($event)" (updateProfile)="onUpdateProfile()"
+      (changePassword)="onChangePassword()" (signOut)="onSignOut()"></hms-header>
     <div class="app__layout-content">
       <hms-sidebar [sideBarData]="sideBarData"></hms-sidebar>
       <router-outlet></router-outlet>
     </div>
-    <div class="app__layout-footer">
-      <hms-footer [footerData]="footerData"></hms-footer>
-    </div>
+    <hms-footer [footerData]="footerData"></hms-footer>
   </div>
 </div>

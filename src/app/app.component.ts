@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { SideBar } from 'hms-core/lib/sidebar/models/sidebar.model';
 import { Footer } from 'hms-core/lib/footer/models/footer.model';
 import { Header } from 'hms-core/lib/header/models/header.model';
+import { LoginSignal } from 'hms-core/lib/login/models/login-signal.model';
 
 @Component({
     selector: 'app-root',
@@ -35,9 +36,9 @@ export class AppComponent {
             },
         ],
         user: {
-            firstName: 'Nguyễn',
-            lastName: 'Sang',
-            email: 'sang.nguyen@orientsoftware.com',
+            firstName: '',
+            lastName: '',
+            email: '',
             avatarUrl: 'assets/images/avatar-1.png'
         },
         userMenuLanguage: {
@@ -71,9 +72,12 @@ export class AppComponent {
             },
         ],
     };
+    public loginSignal: LoginSignal = {
+        isValid: true,
+        invalidMessage: 'Invalid your Email or Password.'
+    };
 
     public isLoginSuccess: boolean;
-    public loginErrorMessage: string;
 
     public constructor(
         private router: Router
@@ -83,10 +87,14 @@ export class AppComponent {
         const isSameEmail: boolean = logInUser.email === this.adminUser.email;
         const isSamePassword: boolean = logInUser.password === this.adminUser.password;
         if (!isSameEmail || !isSamePassword) {
-            this.loginErrorMessage = 'Invalid your Email or Password.';
+            this.isLoginSuccess = false;
+            this.loginSignal.isValid = false;
             return;
         }
-        this.loginErrorMessage = '';
+        this.headerData.user.lastName = this.adminUser.lastName ? this.adminUser.lastName : '';
+        this.headerData.user.firstName = this.adminUser.firstName ? this.adminUser.firstName : '';
+        this.headerData.user.email = this.adminUser.email;
+        this.loginSignal.isValid = true;
         this.isLoginSuccess = true;
     }
 

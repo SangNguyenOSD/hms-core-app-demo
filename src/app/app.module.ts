@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HmsCoreModule } from 'hms-core';
@@ -23,6 +23,5 @@ import { ContactComponent } from './contact/contact.component';
     ],
     providers: [],
     bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
