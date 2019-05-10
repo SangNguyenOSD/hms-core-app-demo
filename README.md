@@ -1,6 +1,6 @@
 # HMS Core Application Demo
 
-This Angular application demostrate how to use **HMS Core Library** in Angular application.
+This Angular application demostrate how to use [**HMS Core Library**](https://github.com/SangNguyenOSD/hms-core-v1) in Angular application.
 
 ## Table Of Contents
 
@@ -66,9 +66,6 @@ import { HmsCoreModule } from 'hms-core'; // <-- Declare importting module from 
 })
 export class AppModule { }
 ```
-## Running unit tests
-
-Run `ng test hms-core` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Author
 * **Shane - Sang Nguyen** - *Initial work* - [Github](https://github.com/SangNguyenOSD)
