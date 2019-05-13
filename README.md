@@ -67,5 +67,14 @@ import { HmsCoreModule } from 'hms-core'; // <-- Declare importting module from 
 export class AppModule { }
 ```
 
+### Login
+
+Once you install, import and then run app with "ng serve" successfull. After that, you are required fill email, password to login. I put a default account in **environment.ts** to could login and see app's layout.
+
+```shell
+email: 'sang.nguyen@orientsoftware.com'
+password: '123'
+```
+
 ## Author
 * **Shane - Sang Nguyen** - *Initial work* - [Github](https://github.com/SangNguyenOSD)
